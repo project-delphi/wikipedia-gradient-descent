@@ -1,5 +1,3 @@
-// Derivative function
-const df = (x) => (4*x-9)*x*x
 
 const convergeGradientDescent = (
 gradientFunction, // the gradient Function 
@@ -24,6 +22,8 @@ gamma = 0.01  // Step size multiplier
 }
 
 // TEST
+// Derivative function
+const df = (x) => (4*x-9)*x*x
 convergeGradientDescent(df,6)
 //2.2499646074278457
 //Minimum at: 2.2499646074278457
