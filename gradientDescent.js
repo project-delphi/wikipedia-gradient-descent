@@ -9,16 +9,18 @@ gamma = 0.01  // Step size multiplier
   let step = 2*precision
   let iter = 0
   let x = x0
-  while (Math.abs(step) > precision){
+  while (true){
     step = gamma * gradientFunction(x)
-    x = x - step
+    x -= step
     iter++
     console.log(iter)
     if(iter > maxIters) throw Error("Exceeded maximum iterations")
+    if(Math.abs(step) < precision) {
+      console.log(`Minimum at: `)
+      console.log(`After ${iter} iteration(s)`)
+      return(x)
+    }
   }
-  console.log(`Minimum at: ${x}`)
-  console.log(`after ${iter} iteration(s)`)
-  return(x)
 }
 
 // TEST
