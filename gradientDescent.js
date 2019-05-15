@@ -16,7 +16,7 @@ gamma = 0.01  // Step size multiplier
     console.log(iter)
     if(iter > maxIters) throw Error("Exceeded maximum iterations")
     if(Math.abs(step) < precision) {
-      console.log(`Minimum at: `)
+      console.log(`Minimum at: ${x}`)
       console.log(`After ${iter} iteration(s)`)
       return(x)
     }
